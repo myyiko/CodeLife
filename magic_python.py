@@ -4,16 +4,16 @@
 # 这个语法不仅合并  还能去重(如果key和value的值一致的话) 如果key相同,会将第一个元素中的key-value移除  保留最后元素的
 d1 = {'a': 1}
 d2 = {'b': 2}
+# 方法1
 d = {**d1, **d2}
-
-# 关于str和repr说明:两个都是bulitins函数  str是返回human可读的  repr是返回解释器可识别的
-
-from datetime import datetime
-
-now = datetime.now()
-
-print(str(now))
-print(repr(now))
+# 方法2
+d1.update(d2)
+# 方法3
+from collections import ChainMap
+d = dict(ChainMap(d1, d2))  # ChainMap返回的是一个ChainMap对象
+# 方法4
+from itertools import chain
+d = dict(chain(d1.items(), d2.items()))  # chain返回的是一个迭代器
 
 # dict排序 可根据key/value/key or value length and so on
 
