@@ -15,6 +15,7 @@ d = dict(ChainMap(d1, d2))  # ChainMap返回的是一个ChainMap对象
 from itertools import chain
 d = dict(chain(d1.items(), d2.items()))  # chain返回的是一个迭代器
 
+方法1/3/4中可以传入多个字典参数
 # dict排序 可根据key/value/key or value length and so on
 
 d1 = {'n': 21, 'h': 'sd', 'a': 213}
