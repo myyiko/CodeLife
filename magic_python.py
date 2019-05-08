@@ -30,6 +30,12 @@ d = dict(d1.items() & d2.items() & d3.items())
 d = min(zip(d1.values(), d1.keys()))
 
 #----------------------------------------------------------------------
+# 给二维列表降维
+l1 = [[1, 2, 'a', 'b'], [4, 5]]
+
+from itertools import chain
+list(chain.from_iterable(l1))
+#----------------------------------------------------------------------
 # dict排序 可根据key/value/key or value length and so on
 
 d1 = {'n': 21, 'h': 'sd', 'a': 213}
